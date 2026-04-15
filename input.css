@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f1f5f9; /* slate-100 fallback */
+  }
+}
+
+@layer components {
+  /* Editor Styles */
+  .ProseMirror p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: #adb5bd;
+    pointer-events: none;
+    height: 0;
+  }
+  .ProseMirror p.is-editor-empty:first-child {
+    text-indent: 0 !important;
+  }
+  .ProseMirror {
+    outline: none !important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  /* Tiptap Pagination Plus Styles */
+  .rm-with-pagination .page {
+    background-color: white !important;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  @media (max-width: 850px) {
+    .rm-with-pagination,
+    .tiptap,
+    .ProseMirror {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+    .rm-with-pagination .page,
+    .tiptap .page,
+    .ProseMirror .page {
+      box-sizing: border-box !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      height: auto !important;
+      min-height: 1123px !important;
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
+  .animate-fade-in-up { animation: fadeInUp 0.5s ease-in-out; }
+  
+  @keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+  }
+  @keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+  }
+}

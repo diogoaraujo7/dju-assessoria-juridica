@@ -1,0 +1,5 @@
+{
+  "name": "Dju Assessoria Jurídica v1.0",
+  "description": "Um Assistente Jurídico baseado em I.A. para ajudar juristas a elaborar atos decisórios, pareceres, petições e outros documentos. A aplicação segue um fluxo de trabalho estruturado para analisar os dados do processo e gerar documentos jurídicos personalizados.",
+  "requestFramePermissions": []
+}
